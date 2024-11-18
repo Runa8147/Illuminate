@@ -12,6 +12,7 @@ function App() {
   const [showHint, setShowHint] = useState(false);
   const [hintMessage, setHintMessage] = useState('');
   const [isCorrectAnswer, setIsCorrectAnswer] = useState(false);
+  const [incorrectAttempts, setIncorrectAttempts] = useState(0);
 
   useEffect(() => {
     if (currentWordIndex < words.length) {
@@ -29,12 +30,22 @@ function App() {
     if (answer.toLowerCase() === 'ecell') {
       setIsCorrectAnswer(true);
       setShowSocial(true);
+      setIncorrectAttempts(0);
     } else {
       setHintMessage('Incorrect answer. Provide the correct answer to gain entry to Illuminate.');
       setShowHint(true);
       setTimeout(() => setShowHint(false), 3000);
+      
+      setIncorrectAttempts(prev => prev + 1);
+      
       setShowSocial(true);
       setIsCorrectAnswer(false);
+      
+      if (incorrectAttempts >= 2) {
+        setHintMessage("Take the first letters of each clue.");
+      } else {
+        setHintMessage("Not a phone, not a jail,\nBut a 'cell' where ideas sail!");
+      }
     }
   };
 
@@ -108,19 +119,6 @@ function App() {
         )}
       </AnimatePresence>
 
-      {/* Hint Message */}
-      <AnimatePresence>
-        {showHint && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-red-500/80 text-white px-6 py-3 rounded-lg"
-          >
-            {hintMessage}
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* Social Links Modal */}
       <AnimatePresence>
@@ -151,6 +149,11 @@ function App() {
                 <a href="https://chat.whatsapp.com/LwAzAUmGAITC625WqO6f29" target="_blank" rel="noopener noreferrer" className="block w-full py-3 mt-6 text-center rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300">
                   Join us for Illuminate
                 </a>
+              )}
+              {!isCorrectAnswer && (
+                <p className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-red-500/80 text-white px-6 py-3 rounded-lg">
+                  {hintMessage}
+                </p>
               )}
               <div className="flex justify-around mt-4">
                 <a href="https://www.instagram.com/ecell_.jec?igsh=ejZoc2NyN3JzYWRr" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center p-4 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">

@@ -153,14 +153,14 @@ function App() {
                 </a>
               )}
               <div className="flex justify-around mt-4">
-                <a href="https://chat.whatsapp.com/LwAzAUmGAITC625WqO6f29" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center p-4 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">
+                <a href="https://www.instagram.com/ecell_.jec?igsh=ejZoc2NyN3JzYWRr" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center p-4 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">
                   <Instagram className="w-6 h-6 text-pink-400" />
                 </a>
-                <a href="#" className="flex items-center justify-center p-4 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">
-                  <X className="w-6 h-6 text-blue-400" />
-                </a>
-                <a href="#" className="flex items-center justify-center p-4 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">
+                <a href="https://www.linkedin.com/company/e-cell-jec-iitb/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center p-4 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">
                   <Linkedin className="w-6 h-6 text-blue-500" />
+                </a>
+                <a href="https://x.com/IedcE56917" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center p-4 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">
+                  <X className="w-6 h-6 text-blue-400" />
                 </a>
               </div>
             </motion.div>

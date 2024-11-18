@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, Instagram, Linkedin, X } from 'lucide-react';
+import { Instagram,Linkedin, X } from 'lucide-react';
 
 const words = ["Only", "the", "brightest", "minds", "will", "enter"];
 
@@ -32,7 +32,7 @@ function App() {
       setShowSocial(true);
       setIncorrectAttempts(0);
     } else {
-      setHintMessage('Incorrect answer. Provide the correct answer to gain entry to Illuminate.');
+      setHintMessage('Incorrect answer Try Again. Provide the correct answer to gain entry to Illuminate.');
       setShowHint(true);
       setTimeout(() => setShowHint(false), 3000);
       
@@ -42,9 +42,9 @@ function App() {
       setIsCorrectAnswer(false);
       
       if (incorrectAttempts >= 2) {
-        setHintMessage("Take the first letters of each clue.");
+        setHintMessage("Incorrect answer Try again\nHint:Take the first letters of each clue.");
       } else {
-        setHintMessage("Not a phone, not a jail,\nBut a 'cell' where ideas sail!");
+        setHintMessage("Incorrect answer Try again\nHint:Not a phone, not a jail,\nBut a 'cell' where ideas sail!");
       }
     }
   };
